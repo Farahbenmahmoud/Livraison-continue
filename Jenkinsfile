@@ -11,14 +11,14 @@ sh " ansible-playbook  /var/lib/jenkins/workspace/livraison/Ansible/build.yml -i
  }
  
  }*/
- /*stage('docker')
+ stage('docker')
  {
  steps{
  script{
- sh " ansible-playbook  /var/lib/jenkins/workspace/livraison/Ansible/docker.yml -i Ansible/host.yml "
+ sh " ansible-playbook  /var/lib/jenkins/workspace/livraison/Ansible/docker.yml -i Ansible/inventory/host.yml "
  }
  }
- }*/
+ }
    stage('Docker login') {
 
                                          steps {
@@ -29,7 +29,7 @@ sh " ansible-playbook  /var/lib/jenkins/workspace/livraison/Ansible/build.yml -i
  {
  steps{
  script{
- sh " ansible-playbook /var/lib/jenkins/workspace/livraison/Ansible/docker-registry.yml -i Ansible/host.yml "
+ sh " ansible-playbook /var/lib/jenkins/workspace/livraison/Ansible/docker-registry.yml -i Ansible/inventory/host.yml "
  }
  }
  }
