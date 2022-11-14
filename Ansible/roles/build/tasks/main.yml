@@ -1,0 +1,7 @@
+---
+# tasks file for build
+- name: install node module
+  shell: npm install
+#buid project
+- name: build app
+  shell: ng build --configuration production && chmod 777 -R /var/lib/jenkins/workspace/livraison/dist/
